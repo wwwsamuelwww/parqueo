@@ -37,6 +37,9 @@
             <div class="menu">
                 <a href="#" class="d-block text-light p-3 border-0"><i class="icon ion-md-apps lead mr-2"></i>
                     Estacionamientos</a>
+
+                <a href="#" class="d-block text-light p-3 border-0"><i class="icon ion-md-apps lead mr-2"></i>
+                    Registrar</a>
             </div>
         </div>
         <!-- Fin sidebar -->
