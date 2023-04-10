@@ -21,7 +21,7 @@ for($i=0;$i<6;$i++){
     }
 }
 
-prq_reg( $id_prq, $nombre, $cantidad);
-hor_reg( $id_hro, $hro_at, $hro_ce, $id_prq, $lun, $mar, $mie, $jue, $vie, $sab);
+prq_reg( $idparqueo, $nombre, $cantidad);
+hor_reg( $idhorario, $hro_at, $hro_ce, $idparqueo, $dias[0], $dias[1], $dias[2], $dias[3], $dias[4], $dias[5]);
 
 ?>

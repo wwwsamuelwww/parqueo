@@ -2,6 +2,8 @@
 
 //include './conectar.php';
 
+
+///NO ME FUNCIONA EL INCLUDE POR ESO ESTA AQUI LA CONEXION Y TAMPOCO FUNCA
 function conexion(){
     $conexion=mysqli_connect('db4free.net','condor','betaalfa800','parqueo','3306');
     if($conexion){
@@ -23,7 +25,9 @@ function hor_mod( $id_hro, $hro_at, $hro_ce, $id_prq, $lun, $mar, $mie, $jue, $v
     $query = mysqli_query($conn,$sql);
     if(!$query){
         echo "algo salio mal";
-        exit;
+        return null;
+    }else{
+        return $query;
     }
 }
 
@@ -35,7 +39,9 @@ function prq_mod( $id_prq, $nombre, $cantidad)
     $query = mysqli_query($conn,$sql);
     if(!$query){
         echo "algo salio mal";
-        exit;
+        return null;
+    }else{
+        return $query;
     }
 }
 
@@ -48,7 +54,9 @@ function hor_reg( $id_hro, $hro_at, $hro_ce, $id_prq, $lun, $mar, $mie, $jue, $v
     $query = mysqli_query($conn,$sql);
     if(!$query){
         echo "algo salio mal";
-        exit;
+        return null;
+    }else{
+        return $query;
     }
 }
 
@@ -61,7 +69,9 @@ function prq_reg( $id_prq, $nombre, $cantidad)
     $query = mysqli_query($conn,$sql);
     if(!$query){
         echo "algo salio mal";
-        exit;
+        return null;
+    }else{
+        return $query;
     }
 }
 
@@ -75,6 +85,7 @@ function prq_vista($idP){
 
     $query = mysqli_query($conn,$sql);
     if(!$query){
+        echo "algo salio mal";
         return null;
     }else{
         return $query;

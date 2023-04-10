@@ -21,4 +21,7 @@ for($i=0;$i<6;$i++){
     }
 }
 
+prq_mod( $idparqueo, $nombre, $cantidad);
+hor_mod( $idhorario, $hro_at, $hro_ce, $idparqueo, $dias[0], $dias[1], $dias[2], $dias[3], $dias[4], $dias[5]);
+
 ?>
