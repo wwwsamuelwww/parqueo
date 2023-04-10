@@ -84,10 +84,10 @@
         <div id="content" style="background-color: white;" class="bg-grey w-100">
             <div style="border-bottom: black">
                 <h1 class="text-center">
-                    MODIFICACION DEL PARQUEO
+                    REGISTRAR PARQUEO
                 </h1>
             </div>
-            <form class="form-inline position-relative d-inline-block my-2" action="../Backend/prq_mod.php" method="POST">
+            <form class="form-inline position-relative d-inline-block my-2" action="../Backend/prq_reg.php" method="POST">
 
                 <table class="tabla" >
                     <tr>
@@ -106,7 +106,7 @@
                                 }
                                 
                             ?>
-                            <input class="form-control" type="text" style="width: 20vw;" name="nombre" id="name_cargo" values="<?php echo $fila["nombre"];?>" required>
+                            <input class="form-control" type="text" style="width: 20vw;" name="nombre" id="name_cargo" required>
                         </td>
                     </tr>
     
@@ -124,7 +124,7 @@
                             <label for="name_cargo">Cantidad de sitios:</label>
                         </td>
                         <td>
-                            <input class="form-control" type="number" style="width: 5vw;" min="1" name="cantidad" id="name_cargo" values="<?php echo $fila["sitios"];?>" required> 
+                            <input class="form-control" type="number" style="width: 5vw;" min="1" name="cantidad" id="name_cargo" required> 
                         </td>
                     </tr>
 
@@ -133,9 +133,9 @@
                             <label for="name_cargo">Horario de atención:    De</label>
                         </td>
                         <td class="horario">
-                            <input class="form-control" type="time" style="width: 5vw;" name="hro_at" value="00:00" min="00:00" max="23:59" id="name_cargo" values="<?php echo $fila["hora_entrada"];?>" required>
+                            <input class="form-control" type="time" style="width: 5vw;" name="hro_at" value="00:00" min="00:00" max="23:59" id="name_cargo" required>
                             <label for="name_cargo" class="a">a</label>
-                            <input class="form-control" type="time" style="width: 5vw;" name="hro_ce" value="00:00" min="00:00" max="23:59" id="name_cargo" values="<?php echo $fila["hora_salida"];?>" required>
+                            <input class="form-control" type="time" style="width: 5vw;" name="hro_ce" value="00:00" min="00:00" max="23:59" id="name_cargo" required>
                         </td>
                     </tr>
                     <tr>
@@ -150,13 +150,6 @@
 
                     <?php
                         for($i=0;$i<6;$i++){
-                            /*
-                            if($dias[$i] === 1){
-                                checked
-                            }else{
-                                "$dias[$i]";
-                                checked
-                            }        */
                     ?>
                         <div class="dias a">
                             <input class="form-control a" type="checkbox" name="<?php echo $dias[$i]?>" id="name_cargo">
