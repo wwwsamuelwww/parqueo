@@ -89,41 +89,52 @@
 
          <!-- Tabla (lista de estacionamientos) -->
         	<div id="content" class="bg-grey w-100"> 
-						<div class="container">
-												<table class="table">
-														<thead>
-																<tr>
-																		<th>Parqueo</th>
-																		<th>Horarios de atención</th>
-																		<th style="text-align: center;">Acciones</th>
-																</tr>
-														</thead>
-														<tbody>
-																<?php while($ver = mysqli_fetch_row($result)): ?>
-																<tr class="">
-																		<td><?php echo $ver[0]; ?></td>
-																		<td><?php 
-                                                                            $dias = "";
-                                                                            if($ver[3]==true && $ver[4]==true && $ver[5]==true && $ver[6]==true && $ver[7]==true && $ver[8]==true){
-                                                                                $dias = "Lun-Dom";
-                                                                            }else if($ver[3]==true && $ver[4]==true && $ver[5]==true && $ver[6]==true && $ver[7]==true && $ver[8]==true){
-                                                                                $dias = "Lun-Sab";
-                                                                            }else if($ver[3]==true && $ver[4]==true && $ver[5]==true && $ver[6]==true && $ver[7]==true && $ver[8]==false){
-                                                                                $dias = "Lun-Vie";
-                                                                            }
-                                                                            echo $dias." ".substr( $ver[1], 0, 5 )."-".substr( $ver[2], 0, 5 ); 
-                                                                        ?></td>
-																		<td style="text-align: center;"> 
-																			<a class="btn btn-danger" href="?borrar=<?php echo $proyecto['id']; ?>" >Eliminar</a> 
-																			<a class="btn btn-primary" href="?modificar=<?php echo $proyecto['id']; ?>" >Modificar</a> 
-																		</td>
-																</tr>
-																<?php endwhile; ?>
-														</tbody>
-												</table>        
-										</div>
-						</div>				
-
+                <div class="container">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Parqueo</th>
+                                <th>Horarios de atención</th>
+                                <th style="text-align: center;">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php while($ver = mysqli_fetch_row($result)): ?>
+                            <tr class="">
+                                <td><a href= "eliminarEstacionamiento.php?idEstacionamiento = <?php echo $ver[0];?>" style='text-decoration:none;color:black;' > <?php echo $ver[1]; ?> </a></td>
+                                <td><?php 
+                                    $dias = "";
+                                    if($ver[4] == true){
+                                        $dias = "Lun,"; 
+                                    }
+                                    if($ver[5] == true){
+                                        $dias = $dias."Mar,"; 
+                                    }
+                                    if($ver[4] == true){
+                                        $dias = $dias."Mié,"; 
+                                    }
+                                    if($ver[4] == true){
+                                        $dias = $dias."Jue,"; 
+                                    }
+                                    if($ver[4] == true){
+                                        $dias = $dias."Vie,"; 
+                                    }
+                                    if($ver[4] == true){
+                                        $dias = $dias."Sab,"; 
+                                    }
+                                    $dias = substr($dias, 0, -1);
+                                    echo $dias." ".substr( $ver[2], 0, 5 )."-".substr( $ver[3], 0, 5 ); 
+                                ?></td>
+                                <td style="text-align: center;"> 
+                                    <a class="btn btn-danger" href="?borrar=<?php echo $proyecto['id']; ?>" >Eliminar</a> 
+                                    <a class="btn btn-primary" href="?modificar=<?php echo $proyecto['id']; ?>" >Modificar</a> 
+                                </td>
+                            </tr>
+                            <?php endwhile; ?>
+                        </tbody>
+                    </table>        
+                </div>
+            </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="Frontend/js/sidebars.js"></script>
