@@ -1,14 +1,15 @@
 <?php
 include './parqueo_act.php';
-$idparqueo       = "cual sera el id";
+$idparqueo       = 1;
 $nombre   = $_POST['nombre'];
 $cantidad = $_POST['cantidad'];
 echo $nombre;
 
-$idhorario= "cual será su id";
+$idhorario= 1;
 $hro_at   = $_POST['hro_at'];
+echo $hro_at;
 $hro_ce   = $_POST['hro_ce'];
-
+echo $hro_ce;
 
 $dias = ['lun','mar', 'mie', 'jue', 'vie', 'sab'];
 for($i=0;$i<6;$i++){
