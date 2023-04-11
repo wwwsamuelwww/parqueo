@@ -97,16 +97,18 @@
                         <td>
                             <?php
                                 $res = prq_vista(1);
-                                if($res){
+                                $dias = ['lun','mar', 'mie', 'jue', 'vie', 'sab'];
+
+                                $dias2 = ['lunes','martes', 'miercoles', 'jueves', 'viernes', 'sabado'];
+                                
+                                
                                     $fila =$res->fetch_assoc();
-
-                                    $dias = ['lun','mar', 'mie', 'jue', 'vie', 'sab'];
-
-                                    $dias2 = ['lunes','martes', 'miercoles', 'jueves', 'viernes', 'sabado'];
-                                }
+                                    
+                                
                                 
                             ?>
-                            <input class="form-control" type="text" style="width: 20vw;" name="nombre" id="name_cargo" values="<?php echo $fila["nombre"];?>" required>
+                            <input class="form-control" type="text" style="width: 20vw;" name="nombre" id="name_cargo" value="<?php echo $fila["nombre"];?>" required>
+                            
                         </td>
                     </tr>
     
@@ -124,7 +126,7 @@
                             <label for="name_cargo">Cantidad de sitios:</label>
                         </td>
                         <td>
-                            <input class="form-control" type="number" style="width: 5vw;" min="1" name="cantidad" id="name_cargo" values="<?php echo $fila["sitios"];?>" required> 
+                            <input class="form-control" type="number" style="width: 5vw;" min="1" name="cantidad" id="name_cargo" value="<?php echo $fila["sitios"];?>" required> 
                         </td>
                     </tr>
 
@@ -133,9 +135,9 @@
                             <label for="name_cargo">Horario de atención:    De</label>
                         </td>
                         <td class="horario">
-                            <input class="form-control" type="time" style="width: 5vw;" name="hro_at" value="00:00" min="00:00" max="23:59" id="name_cargo" values="<?php echo $fila["hora_entrada"];?>" required>
+                            <input class="form-control" type="time" style="width: 7vw;" name="hro_at" value="<?php echo $fila["hora_entrada"]?>" min="00:00" max="23:59" id="name_cargo" required>
                             <label for="name_cargo" class="a">a</label>
-                            <input class="form-control" type="time" style="width: 5vw;" name="hro_ce" value="00:00" min="00:00" max="23:59" id="name_cargo" values="<?php echo $fila["hora_salida"];?>" required>
+                            <input class="form-control" type="time" style="width: 7vw;" name="hro_ce" value="<?php echo $fila["hora_salida"]?>" min="00:00" max="23:59" id="name_cargo" required>
                         </td>
                     </tr>
                     <tr>
@@ -150,19 +152,24 @@
 
                     <?php
                         for($i=0;$i<6;$i++){
-                            /*
-                            if($dias[$i] === 1){
-                                checked
-                            }else{
-                                "$dias[$i]";
-                                checked
-                            }        */
+                            
+                            if($fila[$dias[$i]] === 1){
                     ?>
                         <div class="dias a">
-                            <input class="form-control a" type="checkbox" name="<?php echo $dias[$i]?>" id="name_cargo">
+                            <input class="form-control a" type="checkbox" name="<?php echo $dias[$i];?>" id="name_cargo">
                             <label for="name_cargos"><?php echo $dias2[$i]?></label> 
                         </div>
                     <?php
+                            }else{
+                                
+                    ?>
+                        <div class="dias a">
+                            <input class="form-control a" checked type="checkbox" name="<?php echo $dias[$i];?>" id="name_cargo">
+                            <label for="name_cargos"><?php echo $dias2[$i]?></label> 
+                        </div>
+                    <?php
+                                
+                            }
                         }
                     ?>
                      
