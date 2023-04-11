@@ -2,6 +2,8 @@
     --primary: #111B54;
     --light: #ffffff;
     --grey: #efefef;
+    --green:#28a646;
+    --greenB:#23973f;
 }
 
 body {
@@ -21,6 +23,10 @@ a:hover {
 
 .bg-grey { background-color: var(--grey) !important; }
 
+.bg-green { background-color: var(--green) !important;}
+
+.bg-greenB{ background-color: var(--greenB) !important;}
+
 .bg-mix { background: linear-gradient(180deg, var(--light) 50%, var(--grey) 0); }
 
 .btn-primary {
@@ -30,6 +36,11 @@ a:hover {
 
 .btn-primary:hover {
     background-color: var(--primary);
+}
+
+.boolds{
+    color: #000000 !important;
+    font-weight: bold;
 }
 
 #sidebar-container {
@@ -42,6 +53,20 @@ a:hover {
   
 #sidebar-container .menu {
     width: 18rem;
+}
+#sidebar-container .menu .item:hover{
+    background-color: #313de8;
+    transition: 0.3s ease;
+}
+
+#sidebar-container .menu .item a .der{
+    position: static;
+    right: 0;
+    margin: 30px;
+    transition: 0.3s ease;
+}
+#sidebar-container .menu .item .sub-menu a{
+    padding-left: 80px;
 }
 
 #content {
@@ -61,7 +86,9 @@ a:hover {
 .stat {
     border-right: 1px solid var(--grey);
 }
-
+#cabeza{
+    background-color: #111B54 !important;
+}
   
 @media (max-width: 768px) {
     #sidebar-container {
