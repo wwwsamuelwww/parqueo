@@ -96,11 +96,11 @@
 																		<td><?php echo $ver[0]; ?></td>
 																		<td><?php 
                                                                             $dias = "";
-                                                                            if($ver[3]==true && $ver[4]==true && $ver[5]==true && $ver[6]==true && $ver[7]==true && $ver[8]==true && $ver[9]==true){
+                                                                            if($ver[3]==true && $ver[4]==true && $ver[5]==true && $ver[6]==true && $ver[7]==true && $ver[8]==true){
                                                                                 $dias = "Lun-Dom";
-                                                                            }else if($ver[3]==true && $ver[4]==true && $ver[5]==true && $ver[6]==true && $ver[7]==true && $ver[8]==true && $ver[9]==false){
+                                                                            }else if($ver[3]==true && $ver[4]==true && $ver[5]==true && $ver[6]==true && $ver[7]==true && $ver[8]==true){
                                                                                 $dias = "Lun-Sab";
-                                                                            }else if($ver[3]==true && $ver[4]==true && $ver[5]==true && $ver[6]==true && $ver[7]==true && $ver[8]==false && $ver[9]==false){
+                                                                            }else if($ver[3]==true && $ver[4]==true && $ver[5]==true && $ver[6]==true && $ver[7]==true && $ver[8]==false){
                                                                                 $dias = "Lun-Vie";
                                                                             }
                                                                             echo $dias." ".substr( $ver[1], 0, 5 )."-".substr( $ver[2], 0, 5 ); 
