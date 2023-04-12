@@ -1,8 +1,8 @@
 <?php 
     include_once '../Backend/conectar.php';
     $conexion = conexion();
-    if(isset($_GET['id'])){
-        $idP=$_GET['id'];
+    if(isset($_GET['idEstacionamiento'])){
+        $idP=$_GET['idEstacionamiento'];
     }
     $sql="SELECT id,numero,estado FROM sitio_estacionamiento WHERE estacionamiento_id=$idP";
     $query = mysqli_query($conexion,$sql);
