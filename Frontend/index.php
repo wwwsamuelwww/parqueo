@@ -2,7 +2,7 @@
     require_once '../Backend/conectar.php';
     //$conexion = conexion();
     $sql = "CALL sp_mostrar_parqueos";
-    $result = mysqli_query($conn, $sql);
+    $result = mysqli_query($conexion, $sql);
 ?>
 
 <!doctype html>
