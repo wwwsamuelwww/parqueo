@@ -12,6 +12,7 @@
     }
 
     for($i = 0; $resultado[$i] = mysqli_fetch_assoc($query); $i++) ;
+    
     $tamaño = count($resultado) - 1;
     $vacio=4-($tamaño%4);
     $salto=0;
@@ -75,7 +76,7 @@
     <link href="../Frontend/assets/css/sidebars.css" rel="stylesheet">
     
     <title>Dashboard - Campus Parking</title>
-</head><
+</head>
 
 <body>
     <div class="d-flex" id="content-wrapper">
