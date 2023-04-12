@@ -109,8 +109,8 @@
                         </td>
                         <td>
                             <?php
-                                $idEst = $_GET['idDeEst'];
-                                $res = prq_vista($idEst);
+                                $idDeEst = $_GET['idDeEst'];
+                                $res = prq_vista($idDeEst);
                                 $dias = ['lun','mar', 'mie', 'jue', 'vie', 'sab'];
 
                                 $dias2 = ['lunes','martes', 'miercoles', 'jueves', 'viernes', 'sabado'];
@@ -167,10 +167,10 @@
                     <?php
                         for($i=0;$i<6;$i++){
                             
-                            if($fila[$dias[$i]] === 1){
+                            if($fila[$dias[$i]] == 1){
                     ?>
                         <div class="dias a">
-                            <input class="form-control a" type="checkbox" name="<?php echo $dias[$i];?>" id="name_cargo">
+                            <input checked type="checkbox" name="<?php echo $dias[$i];?>" id="name_cargo">
                             <label for="name_cargos"><?php echo $dias2[$i]?></label> 
                         </div>
                     <?php
@@ -178,7 +178,7 @@
                                 
                     ?>
                         <div class="dias a">
-                            <input class="form-control a" checked type="checkbox" name="<?php echo $dias[$i];?>" id="name_cargo">
+                            <input  type="checkbox" name="<?php echo $dias[$i];?>" id="name_cargo">
                             <label for="name_cargos"><?php echo $dias2[$i]?></label> 
                         </div>
                     <?php
@@ -209,3 +209,4 @@
 </body>
 
 </html>
+
