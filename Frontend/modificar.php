@@ -1,5 +1,5 @@
 <?php
-   include '../Backend/conectar.php';
+   include_once '../Backend/conectar.php';
    require("../Backend/parqueo_act.php"); 
 ?>
 
@@ -109,7 +109,8 @@
                         </td>
                         <td>
                             <?php
-                                $res = prq_vista(1);
+                                $idEst = $GET_['idDeEst'];
+                                $res = prq_vista($idEst);
                                 $dias = ['lun','mar', 'mie', 'jue', 'vie', 'sab'];
 
                                 $dias2 = ['lunes','martes', 'miercoles', 'jueves', 'viernes', 'sabado'];
