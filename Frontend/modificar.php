@@ -109,7 +109,8 @@
                         </td>
                         <td>
                             <?php
-                                $res = prq_vista(1);
+                                $idEst = $_GET['idDeEst'];
+                                $res = prq_vista($idEst);
                                 $dias = ['lun','mar', 'mie', 'jue', 'vie', 'sab'];
 
                                 $dias2 = ['lunes','martes', 'miercoles', 'jueves', 'viernes', 'sabado'];
