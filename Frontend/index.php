@@ -50,7 +50,7 @@
                   </button>
                   <div class="collapse show" id="home-collapse">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                      <li><a href="modificar.php" class="link-dark rounded text-white text-decoration-none">Modificar Estacionamientos</a></li>
+                      <li><a href="#" class="link-dark rounded text-white text-decoration-none">Lista de Estacionamientos</a></li>
                       <li><a href="registrar.php" class="link-dark rounded text-white text-decoration-none">Registrar</a></li>
                     </ul>
                   </div>
@@ -101,7 +101,7 @@
                         <tbody>
                             <?php while($ver = mysqli_fetch_row($result)): ?>
                             <tr class="">
-                                <td><a href= "informacion.php?idEstacionamiento = <?php echo $ver[0];?>" style='text-decoration:none;color:black;' > <?php echo $ver[1]; ?> </a></td>
+                                <td><a href= "informacion.php?id=<?php echo $ver[0];?>" style='text-decoration:none;color:black;' > <?php echo $ver[1]; ?> </a></td>
                                 <td><?php 
                                     $dias = "";
                                     if($ver[4] == true){

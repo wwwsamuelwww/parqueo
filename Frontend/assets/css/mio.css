@@ -54,6 +54,20 @@ a:hover {
 #sidebar-container .menu {
     width: 18rem;
 }
+        #sidebar-container .menu .item:hover{
+            background-color: #313de8;
+            transition: 0.3s ease;
+        }
+
+        #sidebar-container .menu .item a .der{
+            position: static;
+            right: 0;
+            margin: 30px;
+            transition: 0.3s ease;
+        }
+        #sidebar-container .menu .item .sub-menu a{
+            padding-left: 80px;
+        }
 
 #content {
     overflow-y: auto;
@@ -72,7 +86,6 @@ a:hover {
 .stat {
     border-right: 1px solid var(--grey);
 }
-
 #cabeza{
     background-color: #111B54 !important;
 }
@@ -85,41 +98,4 @@ a:hover {
         border: 0;
     }
   }
-.tabla{
-    margin-left: 22vw;
-}
-.form-group{
-    margin-left: 22vw;
-    display: flex;
-    margin-right: 20vw;
-    flex-direction: row;
-    justify-content: center;
-}
-.dias{
-    display: flex;
-    flex-direction: row;
-    justify-content: center
-}
-.desc{
-    width: 10vw;
-}
-
-.horario{
-    display: flex;
-    flex-direction: row;
-    justify-content: left;
-}
-
-.column-1{
-    display: flex;
-    justify-content: end;
-}
-
-.a{
-    margin-left: 5px;
-    margin-right: 5px;
-}
-
-tr, td{
-    padding: 1vh;
-}
+  

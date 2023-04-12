@@ -36,11 +36,11 @@ function prq_mod( $id_prq, $nombre, $cantidad)
     }
 }
 
-function hor_reg( $id_hro, $hro_at, $hro_ce, $id_prq, $lun, $mar, $mie, $jue, $vie, $sab)
+function hor_reg($hro_at, $hro_ce, $id_prq, $lun, $mar, $mie, $jue, $vie, $sab)
 {
     $conn = conexion();
-    $sql = "INSERT INTO horario_estacionamiento (id, hora_entrada, hora_salida, estacionamiento_id, lun, mar, mie, jue, vie, sab) values 
-                                   ('$id_hro','$hro_at','$hro_ce','$id_prq','$lun','$mar','$mie','$jue','$vie','$sab');";  
+    $sql = "INSERT INTO horario_estacionamiento (hora_entrada, hora_salida, estacionamiento_id, lun, mar, mie, jue, vie, sab) values 
+                                   ('$hro_at','$hro_ce','$id_prq','$lun','$mar','$mie','$jue','$vie','$sab');";  
 
     $query = mysqli_query($conn,$sql);
     if(!$query){
@@ -51,11 +51,11 @@ function hor_reg( $id_hro, $hro_at, $hro_ce, $id_prq, $lun, $mar, $mie, $jue, $v
     }
 }
 
-function prq_reg( $id_prq, $nombre, $cantidad)
+function prq_reg($nombre, $cantidad)
 {
     $conn = conexion();
-    $sql = "INSERT INTO estacionamiento (id, nombre, sitios) values 
-                                   ('$id_prq','$nombre','$cantidad');";  
+    $sql = "INSERT INTO estacionamiento (nombre, sitios, precioSitio) values 
+                                   ('$nombre','$cantidad','1200');";  
 
     $query = mysqli_query($conn,$sql);
     if(!$query){
