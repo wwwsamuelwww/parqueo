@@ -161,7 +161,7 @@
                     </tr>
                 </table>
                 
-                <div class="form-group" style="margin-top: 3vh;">
+                <div class="form-group" style="margin-top: 3vh; width: 70vh;">
 
                     <?php
                         for($i=0;$i<6;$i++){
