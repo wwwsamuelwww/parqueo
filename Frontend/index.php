@@ -150,7 +150,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <a class="btn btn-primary" href="?modificar=<?php echo $proyecto['id']; ?>" >Modificar</a> 
+                                    <a class="btn btn-primary" href="modificar.php?idDeEst=<?php echo $ver[0]; ?>" >Modificar</a> 
                                 </td>
                             </tr>
                             <?php endwhile; ?>
