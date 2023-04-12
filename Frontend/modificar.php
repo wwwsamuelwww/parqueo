@@ -1,5 +1,5 @@
 <?php
-   include '../Backend/conectar.php';
+   include_once '../Backend/conectar.php';
    require("../Backend/parqueo_act.php"); 
 ?>
 
