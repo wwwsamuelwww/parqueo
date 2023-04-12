@@ -1,6 +1,6 @@
 <?php
     require_once '../Backend/conectar.php';
-    //$conexion = conexion();
+    $conexion = conexion();
     $sql = "CALL sp_mostrar_parqueos";
     $result = mysqli_query($conexion, $sql);
 ?>
