@@ -71,8 +71,8 @@ function prq_vista($idP){
     $sql="SELECT p.nombre,p.sitios,h.hora_entrada,h.hora_salida,h.lun,h.mar,h.mie,h.jue,h.vie,h.sab
     FROM estacionamiento p
     JOIN horario_estacionamiento h
-    ON p.id =h.id
-    WHERE estacionamiento_id=$idP";
+    ON p.id = h.estacionamiento_id
+    WHERE p.id=$idP";
 
     $query = mysqli_query($conn,$sql);
     if(!$query){
