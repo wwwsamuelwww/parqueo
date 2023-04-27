@@ -1,0 +1,188 @@
+:root {
+    --primary: #111B54;
+    --light: #ffffff;
+    --grey: #efefef;
+    --green:#28a646;
+    --greenB:#23973f;
+}
+
+body {
+    overflow: hidden;
+    font-family: 'Muli', sans-serif;
+    font-weight: 300;
+    color: var(--primary);
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.bg-primary { background-color: var(--primary) !important; }
+
+.bg-light { background-color: var(--light) !important; }
+
+.bg-grey { background-color: var(--grey) !important; }
+
+.bg-green { background-color: var(--green) !important;}
+
+.bg-greenB{ background-color: var(--greenB) !important;}
+
+.bg-mix { background: linear-gradient(180deg, var(--light) 50%, var(--grey) 0); }
+
+.btn-primary {
+    background-color: var(--primary);
+    border: 0;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary);
+}
+
+.boolds{
+    color: #000000 !important;
+    font-weight: bold;
+}
+
+#sidebar-container {
+    min-height: 100vh;
+}
+  
+#sidebar-container .logo{
+    padding: 0.875rem 1.25rem;
+}
+  
+#sidebar-container .menu {
+    width: 18rem;
+}
+
+#content {
+    overflow-y: auto;
+    height: 100vh;
+    padding-bottom: 5rem;
+}
+
+.avatar {
+    max-width: 35px;
+}
+
+.btn-search {
+    right: 0;
+}
+
+.stat {
+    border-right: 1px solid var(--grey);
+}
+
+#cabeza{
+    background-color: #111B54 !important;
+}
+  
+@media (max-width: 768px) {
+    #sidebar-container {
+      display: none;
+    }
+    .stat {
+        border: 0;
+    }
+  }
+.tabla{
+    margin-left: 22vw;
+}
+.form-group{
+    margin-left: 22vw;
+    display: flex;
+    margin-right: 20vw;
+    flex-direction: row;
+    justify-content: center;
+}
+.dias{
+    display: flex;
+    flex-direction: row;
+    justify-content: center
+}
+.desc{
+    width: 10vw;
+}
+
+.horario{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+
+.column-1{
+    display: flex;
+    justify-content: end;
+}
+
+.a{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+tr, td{
+    padding: 1vh;
+}
+
+.warnings{
+    width: 200px;
+    text-align: center;
+    margin: auto;
+    color:red;
+    padding-top: 20px;
+}
+.tabla{
+    margin-left: 20vw;
+    display: flex;
+    flex-direction: row;
+}
+.form-group{
+    margin-left: 20vw;
+    display: flex;
+    
+    flex-direction: row;
+    justify-content: center;
+}
+.dias{
+    display: flex;
+    flex-direction: row;
+    justify-content: center
+}
+.desc{
+    width: 10vw;
+}
+
+.horario{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+
+.column-1{
+    display: flex;
+    justify-content: end;
+    padding-right: 3%;
+}
+
+.a{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.fila{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+tr, td{
+    padding: 1vh;
+}
+
+.warnings{
+    width: 200px;
+    text-align: center;
+    margin: auto;
+    color:red;
+    padding-top: 20px;
+}
