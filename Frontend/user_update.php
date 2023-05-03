@@ -1,7 +1,7 @@
 <?php
    include '../Backend/conectar.php';
    require("../Backend/function_usr.php");
-
+    
     $conn = conexion();
     session_start();
     $idUsr  = $_SESSION["idUsuario"];
@@ -299,9 +299,9 @@
                     </tr>
                 </table>
 
-                <div class="form-group" style="margin-top: 6vh;">
+                <div class="form-group" style="margin-top: 6vh; margin-right: 5px;">
                     <button class="btn btn-success a" name="Guardar" id = "botonsito" type="submit">Guardar</button>
-                    <a class="btn btn-danger a">
+                    <a class="btn btn-danger a" href="./activo_view.php">
                         Cancelar
                     </a>
                 </div>

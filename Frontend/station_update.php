@@ -1,9 +1,10 @@
 <?php
    include '../Backend/conectar.php';
    require("../Backend/function_est.php");
+
     $conn = conexion();
-    session_start();
-    $idEst  = $_SESSION["idUsuario"];
+    if(isset($_GET["idDeEst"])){
+    $idEst  = $_GET["idDeEst"];
     $res =est_view($idEst);
     $fila =$res->fetch_assoc();
     $nombre = $fila["nombre"];
@@ -24,6 +25,7 @@
         }
         array_push($horario,[$filahro["IDHORATENCION"],$filahro["HORAINIATENCION"],$filahro["HORAFINATENCION"], $valor,$filahro["LUN"],$filahro["SAB"]]);
     }
+}
     $mensaje = "";
     $errNom = "";
     $errPrec = "";
@@ -128,7 +130,6 @@
     <!-- Styles -->
     <link rel="stylesheet" href="assets/css/style.css">
 
-
     <!-- Google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Muli:300,700&display=swap" rel="stylesheet">
 
@@ -143,52 +144,20 @@
 
         <!-- Sidebar -->
         <div id="sidebar-container" class="bg-primary">
-    <div class="logo">
-        <h4 class="text-light font-weight-bold mb-0">Campus Parking</h4>
-    </div>
-    <div class="menu">
+            <div class="logo">
+                <h4 class="text-light font-weight-bold mb-0">Campus Parking</h4>
+            </div>
+            <div class="menu">
+                <a href="#" class="d-block text-light p-3 border-0"><i class="icon ion-md-apps lead mr-2"></i>
+                    Estacionamientos</a>
 
-                <div>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-car-front-fill" viewBox="0 0 16 16" style="margin-left:5px">
-                    <path d="M2.52 3.515A2.5 2.5 0 0 1 4.82 2h6.362c1 0 1.904.596 2.298 1.515l.792 1.848c.075.175.21.319.38.404.5.25.855.715.965 1.262l.335 1.679c.033.161.049.325.049.49v.413c0 .814-.39 1.543-1 1.997V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.338c-1.292.048-2.745.088-4 .088s-2.708-.04-4-.088V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.892c-.61-.454-1-1.183-1-1.997v-.413a2.5 2.5 0 0 1 .049-.49l.335-1.68c.11-.546.465-1.012.964-1.261a.807.807 0 0 0 .381-.404l.792-1.848ZM3 10a1 1 0 1 0 0-2 1 1 0 0 0 0 2Zm10 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2ZM6 8a1 1 0 0 0 0 2h4a1 1 0 1 0 0-2H6ZM2.906 5.189a.51.51 0 0 0 .497.731c.91-.073 3.35-.17 4.597-.17 1.247 0 3.688.097 4.597.17a.51.51 0 0 0 .497-.731l-.956-1.913A.5.5 0 0 0 11.691 3H4.309a.5.5 0 0 0-.447.276L2.906 5.19Z"/>
-                </svg>
-                <button class="btn btn-toggle align-items-center rounded collapsed text-white text-decoration-none" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
-                      Estacionamientos
-                  </button>
-                  <div class="collapse show" id="home-collapse">
-                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                      <li><a href="registrarEstacionamiento.php" class="link-dark rounded text-white text-decoration-none">Registrar Estacionamiento</a></li>
-                      <li><a href="station_update.php" class="link-dark rounded text-white text-decoration-none">Modificar Estacionameiento</a></li>
-                      <li><a href="eliminarEstacionamiento.php" class="link-dark rounded text-white text-decoration-none">Eliminar Estacionamiento</a></li>
-                      <li><a href="listaEstacionamiento.php" class="link-dark rounded text-white text-decoration-none">Ver Estacionamientos</a></li>
-                    </ul>
-                  </div>
-                </div>
-                <div>
-                <div>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-people-fill" viewBox="0 0 16 16" style="margin-left:5px">
-  <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/>
-</svg>
-                <button class="btn btn-toggle align-items-center rounded collapsed text-white text-decoration-none" data-bs-toggle="collapse" data-bs-target="#home-collapse2" aria-expanded="true">
-                      Usuarios
-                  </button>
-                  <div class="collapse show" id="home-collapse2">
-                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                      <li><a href="registrarUsuario.php" class="link-dark rounded text-white text-decoration-none">Registrar Usuario</a></li>
-                      <li><a href="bajaUsuario.php" class="link-dark rounded text-white text-decoration-none">Dar de baja a guardia</a></li>
-                      
-                    </ul>
-                  </div>
-                </div>
-                    </div>
-              
-    </div>
-</div>
+                    <a href="#" class="d-block text-light p-3 border-0"><i class="icon ion-md-apps lead mr-2"></i>
+                    Registrar</a>
+            </div>
+        </div>
+        <!-- Fin sidebar -->
 
         <div class="w-100">
-
-
-
 
          <!-- Navbar -->
          <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
@@ -227,7 +196,7 @@
         <div id="content" style="background-color: white;" class="bg-grey w-100">
             <div style="border-bottom: black">
                 <h1 class="text-center">
-                    MODIFICACION DEL ESTACIONAMIENTO
+                    MODIFICACIÓN DEL ESTACIONAMIENTO
                 </h1>
             </div>
             
@@ -235,6 +204,20 @@
                 htmlspecialchars($_SERVER['PHP_SELF']);?>" method="POST">
 
                 <table class="tabla" >
+                <tr>
+                        <td class="column-1">
+                            <label class="etiqueta" for="name_cargo"></label>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editChildres">
+                                  seleccionar
+                            </button>
+                            <?php  include('modal_station.php'); ?>
+                        </td>
+                    </tr>
+                    <?php
+                        if(isset($_GET["idDeEst"])){                        
+                    ?>
                     <tr>
                         <td class="column-1">
                             <label class="etiqueta" for="name_cargo">Nombre:</label>
@@ -289,7 +272,7 @@
                                     }
                                     $etiqueta = "";
                                     if($i<1){
-                                        $etiqueta = "Horario de atencion:";
+                                        $etiqueta = "Horario de atención:";
                                     }
                             ?>
 
@@ -320,18 +303,22 @@
                         </td>
                     </tr>
 
-                    <tr>
-                        
-
-                    </tr>
+                    <?php
+                        }
+                    ?>
                 </table>
-
-                <div class="form-group" style="margin-top: 6vh;">
+                <?php
+                        if(isset($_GET["idDeEst"])){                        
+                ?>
+                <div class="form-group" style="margin-top: 6vh; margin-right: 5px;">
                     <button class="btn btn-success a" name="Guardar" id = "botonsito" type="submit">Guardar</button>
                     <a class="btn btn-danger a" href="./activo_view.php">
                         Cancelar
                     </a>
                 </div>
+                <?php
+                    }
+                ?>
             </form>
 
             <?php echo $mensaje; ?>
@@ -350,9 +337,37 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js" integrity="sha256-R4pqcOYV8lt7snxMQO/HSbVCFRPMdrhAFMH+vr9giYI=" crossorigin="anonymous"></script>
-    <script src="../Frontend/assets/js/sidebars.js"></script>
-
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js" integrity="sha256-R4pqcOYV8lt7snxMQO/HSbVCFRPMdrhAFMH+vr9giYI=" crossorigin="anonymous"></script>
+        <script>
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var myChart = new Chart(ctx, { 
+                type: 'bar',
+                data: {
+                    labels: ['Feb 2020', 'Mar 2020', 'Abr 2020', 'May 2020'],
+                    datasets: [{
+                        label: 'Nuevos usuarios',
+                        data: [50, 100, 150, 200],
+                        backgroundColor: [
+                            '#12C9E5',  
+                            '#12C9E5',
+                            '#12C9E5',
+                            '#111B54'
+                        ],
+                        maxBarThickness: 30,
+                        maxBarLength: 2
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+            </script>
 </body>
 
 </html>
